@@ -1,0 +1,119 @@
+@import "tailwindcss" source(none);
+@source "../app";
+@source "../components";
+
+@theme {
+  --color-forest: #0a3326;
+  --color-forest-2: #0f4533;
+  --color-emerald: #137a58;
+  --color-emerald-soft: #d8eadf;
+  --color-moss: #edf2ea;
+  --color-paper: #f6f3ec;
+  --color-card: #fffdf8;
+  --color-ink: #14211a;
+  --color-muted: #566359;
+  --color-line: #e2ded1;
+  --color-amber: #e7a033;
+  --color-amber-soft: #fbf0d8;
+  --color-water: #2a7599;
+  --color-water-soft: #dbe9f0;
+  --color-want: #2a7599;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+
+  --font-sans: var(--font-jakarta), var(--font-bn), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), var(--font-bn-serif), ui-serif, Georgia, serif;
+
+  --shadow-soft: 0 1px 2px rgb(10 51 38 / 0.05), 0 6px 18px -8px rgb(10 51 38 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(10 51 38 / 0.06), 0 18px 36px -14px rgb(10 51 38 / 0.28);
+  --shadow-float: 0 4px 8px rgb(10 51 38 / 0.08), 0 28px 56px -18px rgb(10 51 38 / 0.38);
+
+  --animate-rise: rise 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-sheet: sheet 0.32s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-pop: pop 0.22s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-shimmer: shimmer 1.4s linear infinite;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes sheet {
+    from { transform: translateY(100%); }
+    to { transform: none; }
+  }
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+  }
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { overflow-x: clip; }
+::selection { background: var(--color-emerald-soft); color: var(--color-forest); }
+button, [role="button"], a { -webkit-tap-highlight-color: transparent; }
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html[lang="bn"] body { line-height: 1.65; }
+html[lang="bn"] .font-display { letter-spacing: 0; }
+
+.font-display { font-family: var(--font-display); font-optical-sizing: auto; letter-spacing: -0.015em; }
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+.skeleton {
+  background: linear-gradient(90deg, #ebe7da 25%, #f6f3ea 37%, #ebe7da 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 0.75rem;
+}
+
+.page-enter { animation: page-in 0.35s ease-out both; }
+@keyframes page-in { from { opacity: 0; } to { opacity: 1; } }
+
+.map-district { transition: fill 0.2s ease, stroke 0.2s ease; cursor: pointer; }
+.map-district:focus-visible { outline: none; stroke: var(--color-amber); stroke-width: 2; }
+
+:focus-visible { outline: 2px solid var(--color-emerald); outline-offset: 2px; }
+.on-dark:focus-visible, .on-dark *:focus-visible { outline-color: var(--color-amber); }
+
+.eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-emerald); }
+html[lang="bn"] .eyebrow { letter-spacing: 0; text-transform: none; font-size: 0.8125rem; }
+
+.scrim-bottom { background: linear-gradient(to top, rgb(10 51 38 / 0.92) 0%, rgb(10 51 38 / 0.68) 40%, rgb(10 51 38 / 0.3) 72%, rgb(10 51 38 / 0.06) 100%); }
+
+.pb-nav { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+@media (min-width: 768px) { .pb-nav { padding-bottom: 2.5rem; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+@media print {
+  body { background: #fff; }
+  .page-enter { animation: none; }
+  main, .page-enter { padding: 0 !important; }
+  section, article { box-shadow: none !important; }
+  a { color: inherit; text-decoration: none; }
+}
+
+@keyframes kenburns {
+  from { transform: scale(1.04) translate3d(0, 0, 0); }
+  to { transform: scale(1.18) translate3d(var(--kx, -2%), var(--ky, -1.5%), 0); }
+}
+.hero-kb { animation: kenburns 11s ease-out both; will-change: transform, opacity; }
