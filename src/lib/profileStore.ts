@@ -1,20 +1,12 @@
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import path from "node:path";
+import { Prisma } from "@prisma/client";
+import { db } from "./db";
 import { districts, foods, places } from "./data";
 import { mapThemes } from "./mapThemes";
 import { slugify } from "./utils";
 import type { ShareData } from "./share";
 
-interface Entry {
-  data: ShareData;
-  tokenHash: string;
-  updatedAt: number;
-}
-
-const FILE = path.join(process.cwd(), ".data", "profiles.json");
 const MAX_PROFILES = 5000;
-let queue: Promise<unknown> = Promise.resolve();
 
 const districtSlugs = new Set(districts.map((d) => d.slug));
 const placeIds = new Set(places.map((p) => p.id));
@@ -51,63 +43,46 @@ export function sanitize(raw: unknown): ShareData | null {
   };
 }
 
-async function load(): Promise<{ [id: string]: Entry }> {
-  try {
-    return JSON.parse(await readFile(FILE, "utf8"));
-  } catch {
-    return {};
-  }
+const sameToken = (given: string, storedHash: string) => {
+  const a = Buffer.from(hashToken(given));
+  const b = Buffer.from(storedHash);
+  return a.length === b.length && timingSafeEqual(a, b);
+};
+
+export async function getProfile(id: string): Promise<{ data: ShareData; updatedAt: number } | null> {
+  const row = await db.profile.findUnique({ where: { id } });
+  return row ? { data: row.data as unknown as ShareData, updatedAt: row.updatedAt.getTime() } : null;
 }
 
-async function save(db: { [id: string]: Entry }) {
-  await mkdir(path.dirname(FILE), { recursive: true });
-  const tmp = `${FILE}.${process.pid}.tmp`;
-  await writeFile(tmp, JSON.stringify(db));
-  await rename(tmp, FILE);
-}
-
-function exclusive<T>(fn: () => Promise<T>): Promise<T> {
-  const run = queue.then(fn, fn);
-  queue = run.catch(() => undefined);
-  return run;
-}
-
-export function getProfile(id: string): Promise<{ data: ShareData; updatedAt: number } | null> {
-  return load().then((db) => (db[id] ? { data: db[id].data, updatedAt: db[id].updatedAt } : null));
-}
-
-export function publishProfile(data: ShareData, id?: string, token?: string): Promise<{ id: string; token: string } | "forbidden" | "full"> {
-  return exclusive(async () => {
-    const db = await load();
-    if (id && db[id]) {
-      const given = Buffer.from(hashToken(token ?? ""));
-      const stored = Buffer.from(db[id].tokenHash);
-      if (given.length !== stored.length || !timingSafeEqual(given, stored)) return "forbidden";
-      db[id] = { ...db[id], data, updatedAt: Date.now() };
-      await save(db);
+export async function publishProfile(data: ShareData, id?: string, token?: string): Promise<{ id: string; token: string } | "forbidden" | "full"> {
+  const json = data as unknown as Prisma.InputJsonValue;
+  if (id) {
+    const row = await db.profile.findUnique({ where: { id } });
+    if (row) {
+      if (!sameToken(token ?? "", row.tokenHash)) return "forbidden";
+      await db.profile.update({ where: { id }, data: { data: json, updatedAt: new Date() } });
       return { id, token: token! };
     }
-    if (Object.keys(db).length >= MAX_PROFILES) return "full";
-    const base = slugify(data.name).slice(0, 24) || "traveler";
-    let newId = "";
-    do newId = `${base}-${randomBytes(2).toString("hex")}`;
-    while (db[newId]);
-    const newToken = randomBytes(24).toString("hex");
-    db[newId] = { data, tokenHash: hashToken(newToken), updatedAt: Date.now() };
-    await save(db);
-    return { id: newId, token: newToken };
-  });
+  }
+  if ((await db.profile.count()) >= MAX_PROFILES) return "full";
+  const base = slugify(data.name).slice(0, 24) || "traveler";
+  const newToken = randomBytes(24).toString("hex");
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const newId = `${base}-${randomBytes(2).toString("hex")}`;
+    try {
+      await db.profile.create({ data: { id: newId, tokenHash: hashToken(newToken), data: json } });
+      return { id: newId, token: newToken };
+    } catch (e) {
+      if (!(e instanceof Prisma.PrismaClientKnownRequestError && e.code === "P2002")) throw e;
+    }
+  }
+  throw new Error("Could not allocate a profile id");
 }
 
-export function removeProfile(id: string, token: string): Promise<boolean> {
-  return exclusive(async () => {
-    const db = await load();
-    if (!db[id]) return true;
-    const given = Buffer.from(hashToken(token));
-    const stored = Buffer.from(db[id].tokenHash);
-    if (given.length !== stored.length || !timingSafeEqual(given, stored)) return false;
-    delete db[id];
-    await save(db);
-    return true;
-  });
+export async function removeProfile(id: string, token: string): Promise<boolean> {
+  const row = await db.profile.findUnique({ where: { id } });
+  if (!row) return true;
+  if (!sameToken(token, row.tokenHash)) return false;
+  await db.profile.delete({ where: { id } });
+  return true;
 }

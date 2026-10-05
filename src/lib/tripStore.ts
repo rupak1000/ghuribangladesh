@@ -1,18 +1,11 @@
 import { randomBytes } from "node:crypto";
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import path from "node:path";
+import { Prisma } from "@prisma/client";
+import { db } from "./db";
 import { districts, foods, places } from "./data";
 import { slugify } from "./utils";
 import type { Trip, TripActivity, TripDay } from "./store";
 
-interface Entry {
-  trip: Trip;
-  createdAt: number;
-}
-
-const FILE = path.join(process.cwd(), ".data", "trips.json");
 const MAX_TRIPS = 5000;
-let queue: Promise<unknown> = Promise.resolve();
 
 const districtSlugs = new Set(districts.map((d) => d.slug));
 const refIds = new Set([...places.map((p) => p.id), ...foods.map((f) => f.id)]);
@@ -78,37 +71,24 @@ export function sanitizeTrip(raw: unknown): Trip | null {
   };
 }
 
-async function load(): Promise<{ [id: string]: Entry }> {
-  try {
-    return JSON.parse(await readFile(FILE, "utf8"));
-  } catch {
-    return {};
+
+export async function getSharedTrip(id: string): Promise<Trip | null> {
+  const row = await db.sharedTrip.findUnique({ where: { id } });
+  return row ? (row.data as unknown as Trip) : null;
+}
+
+export async function shareTrip(trip: Trip): Promise<string | "full"> {
+  if ((await db.sharedTrip.count()) >= MAX_TRIPS) return "full";
+  const base = slugify(trip.name).slice(0, 24) || "trip";
+  const json = trip as unknown as Prisma.InputJsonValue;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const id = `${base}-${randomBytes(3).toString("hex")}`;
+    try {
+      await db.sharedTrip.create({ data: { id, data: json } });
+      return id;
+    } catch (e) {
+      if (!(e instanceof Prisma.PrismaClientKnownRequestError && e.code === "P2002")) throw e;
+    }
   }
-}
-
-async function save(db: { [id: string]: Entry }) {
-  await mkdir(path.dirname(FILE), { recursive: true });
-  const tmp = `${FILE}.${process.pid}.tmp`;
-  await writeFile(tmp, JSON.stringify(db));
-  await rename(tmp, FILE);
-}
-
-export function getSharedTrip(id: string): Promise<Trip | null> {
-  return load().then((db) => db[id]?.trip ?? null);
-}
-
-export function shareTrip(trip: Trip): Promise<string | "full"> {
-  const run = queue.then(async () => {
-    const db = await load();
-    if (Object.keys(db).length >= MAX_TRIPS) return "full" as const;
-    const base = slugify(trip.name).slice(0, 24) || "trip";
-    let id = "";
-    do id = `${base}-${randomBytes(3).toString("hex")}`;
-    while (db[id]);
-    db[id] = { trip, createdAt: Date.now() };
-    await save(db);
-    return id;
-  });
-  queue = run.catch(() => undefined);
-  return run;
+  throw new Error("Could not allocate a trip id");
 }

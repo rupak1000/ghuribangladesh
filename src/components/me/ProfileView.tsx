@@ -23,6 +23,8 @@ import { slugify } from "@/lib/utils";
 import { StaticMap } from "../StaticMap";
 import { cn } from "@/lib/utils";
 import { T, DS } from "@/components/T";
+import { AccountSection } from "./AccountSection";
+import { siteOrigin } from "@/lib/site";
 
 type Tab = "map" | "places" | "food" | "trips" | "favorites";
 
@@ -35,7 +37,7 @@ export function ProfileView() {
   const [share, setShare] = useState(false);
   const [edit, setEdit] = useState(false);
   const [busy, setBusy] = useState(false);
-  const origin = typeof window === "undefined" ? "" : window.location.origin;
+  const origin = siteOrigin();
   const longHref = `${origin}/u?${encodeShare(data)}`;
   const shortHref = s.profileLink ? `${origin}/u/${s.profileLink.id}` : "";
   const [name, setName] = useState("");
@@ -97,6 +99,8 @@ export function ProfileView() {
           <Button className="flex-1 md:flex-none" onClick={() => setShare(true)}><Share2 className="size-4" /> {t("Share")}</Button>
         </div>
       </header>
+
+      <AccountSection />
 
       <section id="public-profile" className="mt-6 scroll-mt-20 rounded-2xl border border-emerald/15 bg-moss p-4 text-sm md:p-5" aria-labelledby="public-profile-title">
         <h2 id="public-profile-title" className="flex items-center gap-2 font-semibold"><Globe className="size-4" /> <T>Your public profile</T></h2>
@@ -206,8 +210,8 @@ export function ProfileView() {
             setEdit(false);
           }}
         >
-          <label className="block text-sm font-medium">{t("Name")}<input value={name} onChange={(e) => setName(e.target.value)} className="mt-1 h-11 w-full rounded-xl border border-line bg-white px-3 outline-none focus:border-emerald" /></label>
-          <label className="block text-sm font-medium"><T>Bio</T><input value={bio} onChange={(e) => setBio(e.target.value)} placeholder={t("Explorer · Foodie · Traveler")} className="mt-1 h-11 w-full rounded-xl border border-line bg-white px-3 outline-none focus:border-emerald" /></label>
+          <label className="block text-sm font-medium">{t("Name")}<input maxLength={120} value={name} onChange={(e) => setName(e.target.value)} className="mt-1 h-11 w-full rounded-xl border border-line bg-white px-3 outline-none focus:border-emerald" /></label>
+          <label className="block text-sm font-medium"><T>Bio</T><input maxLength={120} value={bio} onChange={(e) => setBio(e.target.value)} placeholder={t("Explorer · Foodie · Traveler")} className="mt-1 h-11 w-full rounded-xl border border-line bg-white px-3 outline-none focus:border-emerald" /></label>
           <Button className="w-full" type="submit">Save</Button>
         </form>
       </Sheet>

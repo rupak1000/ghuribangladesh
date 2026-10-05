@@ -259,7 +259,7 @@ function RatesEditor({ trip, setTrip }: { trip: Trip; setTrip: (t: Trip) => void
         {RATE_FIELDS.map((f) => (
           <label key={f.key} className="block text-xs font-semibold">
             {f.label} <span className="font-normal text-muted">({f.unit})</span>
-            <input
+            <input maxLength={120}
               type="number"
               inputMode="decimal"
               min={0}

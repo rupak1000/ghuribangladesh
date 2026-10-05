@@ -29,7 +29,7 @@ id,name,district,status,image_file,also_used_by
 "noakhali--hatiya-buffalo-doi","Hatiya Buffalo Doi","noakhali","shared","1280px-Bhapa_Doi.JPG","Magura Doi"
 "lakshmipur--meghna-hilsa","Meghna Hilsa","lakshmipur","shared","1280px-Hilsa_Ilisha_Fish.jpg","Ilish Pulao"
 "chandpur--chandpur-hilsa","Chandpur Hilsa","chandpur","unique","1280px-Hilsa_fishes.jpg",""
-"cumilla--cumilla-rasmalai","Cumilla Rasmalai","cumilla","missing","",""
+"cumilla--cumilla-rasmalai","Cumilla Rasmalai","cumilla","unique","Rasmalai-2-e1505245876472-gpo.jpg",""
 "cumilla--khadi-fabric-sweets","Khadi Fabric & Sweets","cumilla","shared","1280px-Jelly_Pera_-_Bangladeshi_Sweets_from_Banoful.jpg","Sirajganj Mishti"
 "brahmanbaria--fresh-river-fish-curry","Fresh River Fish Curry","brahmanbaria","shared","1280px-Hilsha_fish_fry_and_eggplant_fry_from_Mawa_ghat_beside_Padma_river_in_Bangladesh.jpg","River Fish Curry / Padma Fish Fry / Jamuna River Fish / Kushtia Padma Fish Fry / Padma Fish Fry"
 "sylhet--shatkora-beef","Shatkora Beef","sylhet","shared","1280px-Bengali_home_made_beef_curry_and_rice_flour_roti.jpg","Chuadanga Beef Bhuna"

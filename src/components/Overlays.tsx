@@ -11,6 +11,7 @@ import { search, type Hit } from "@/lib/search";
 import { Sheet } from "./ui/Sheet";
 import { Button } from "./ui/Button";
 import { T } from "@/components/T";
+import { hasLocalData, signInOnline } from "@/lib/accountClient";
 
 const icons = { district: MapPin, place: Compass, food: Utensils, experience: Sparkles };
 const kindLabel = { district: "Districts", place: "Places", food: "Foods", experience: "Experiences" } as const;
@@ -31,7 +32,7 @@ function SearchPanel() {
     <>
       <div className="flex items-center gap-3 border-b border-line pb-4 pr-10">
         <Search className="size-5 text-muted" />
-        <input
+        <input maxLength={80}
           autoFocus
           value={q}
           onChange={(e) => setQ(e.target.value)}
@@ -84,6 +85,46 @@ export function SearchOverlay() {
   );
 }
 
+function OnlineSignIn() {
+  const { t } = useT();
+  const s = useStore();
+  const [email, setEmail] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const local = hasLocalData(s);
+  const go = async (keepLocal: boolean) => {
+    setBusy(true);
+    setError("");
+    const r = await signInOnline(email.trim(), keepLocal);
+    setBusy(false);
+    if ("error" in r) return setError(r.error);
+    setEmail("");
+    uiActions.closeAuth();
+    uiActions.toast("Signed in. Your online map is loaded.");
+  };
+  return (
+    <details className="mt-5 rounded-2xl border border-line bg-moss/50 p-3">
+      <summary className="min-h-9 cursor-pointer text-sm font-semibold"><T>Already saved your map online? Sign in with your email</T></summary>
+      <div className="mt-3 space-y-3">
+        <label className="block text-sm font-medium">
+          {t("Email")}
+          <input maxLength={120} value={email} onChange={(e) => setEmail(e.target.value)} type="email" autoComplete="email" className="mt-1 h-11 w-full rounded-xl border border-line bg-white px-3 outline-none focus:border-emerald" />
+        </label>
+        {error && <p className="text-sm text-red-600" role="alert">{error}</p>}
+        <button type="button" disabled={busy || !/.+@.+\..+/.test(email.trim())} onClick={() => go(false)} className="h-11 w-full rounded-full bg-forest text-sm font-semibold text-white transition hover:bg-forest-2 disabled:opacity-40">
+          {t("Sign in with email")}
+        </button>
+        {local && (
+          <button type="button" disabled={busy || !/.+@.+\..+/.test(email.trim())} onClick={() => go(true)} className="h-11 w-full rounded-full border border-line bg-white text-sm font-semibold transition hover:border-emerald/40 disabled:opacity-40">
+            {t("Sign in and keep this device's map")}
+          </button>
+        )}
+        <p className="text-xs text-muted"><T>Signing in loads your online map and replaces the map on this device, unless you choose to keep this device&apos;s map.</T></p>
+      </div>
+    </details>
+  );
+}
+
 export function AuthModal() {
   const { authOpen } = useUI();
   const { user } = useStore();
@@ -111,11 +152,11 @@ export function AuthModal() {
       >
         <label className="block text-sm font-medium">
           {t("Name")}
-          <input value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" className="mt-1 h-11 w-full rounded-xl border border-line bg-white px-3 outline-none focus:border-emerald" />
+          <input maxLength={40} value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" className="mt-1 h-11 w-full rounded-xl border border-line bg-white px-3 outline-none focus:border-emerald" />
         </label>
         <label className="block text-sm font-medium">
           {t("Email")} <span className="font-normal text-muted">(optional)</span>
-          <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" autoComplete="email" aria-invalid={!emailOk} className="mt-1 h-11 w-full rounded-xl border border-line bg-white px-3 outline-none focus:border-emerald aria-[invalid=true]:border-red-500" />
+          <input maxLength={120} value={email} onChange={(e) => setEmail(e.target.value)} type="email" autoComplete="email" aria-invalid={!emailOk} className="mt-1 h-11 w-full rounded-xl border border-line bg-white px-3 outline-none focus:border-emerald aria-[invalid=true]:border-red-500" />
           {!emailOk && <span className="mt-1 block text-xs text-red-600"><T>Enter a valid email or leave it empty.</T></span>}
         </label>
         <button type="submit" disabled={!valid} className="h-12 w-full rounded-full bg-forest font-semibold text-white transition hover:bg-forest-2 disabled:opacity-40">{t("Continue")}</button>
@@ -131,6 +172,7 @@ export function AuthModal() {
           {t("Continue as guest")}
         </Button>
       </form>
+      <OnlineSignIn />
       <p className="mt-4 text-xs text-muted"><T>No password needed. Your profile and map are stored on this device. Cloud sync and sign-in with Google arrive when a backend is connected.</T></p>
     </Sheet>
   );

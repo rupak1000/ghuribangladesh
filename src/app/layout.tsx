@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header, BottomNav, Footer } from "@/components/Header";
 import { AuthModal, GlobalEffects, SearchOverlay, Toasts } from "@/components/Overlays";
 import { ProfileSync } from "@/components/me/ProfileSync";
+import { AccountSync } from "@/components/me/AccountSync";
 import { T } from "@/components/T";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta", display: "swap" });
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Toasts />
         <GlobalEffects />
         <ProfileSync />
+        <AccountSync />
       </body>
     </html>
   );

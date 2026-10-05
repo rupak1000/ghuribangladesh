@@ -98,18 +98,18 @@ export function DistrictPicker({ mode, className, defaultOpen }: Props) {
         </div>
 
       {expanded && (
-      <div id="district-picker-list" className={cn("mt-4 grid gap-3 md:grid-cols-2 md:gap-4 xl:grid-cols-4", mode === "browse" && "max-h-[24rem] content-start overflow-y-auto overscroll-contain pr-1")}>
+      <div id="district-picker-list" className={cn("mt-4 grid grid-cols-[minmax(0,1fr)] gap-3 md:grid-cols-2 md:gap-4 xl:grid-cols-4", mode === "browse" && "max-h-[24rem] content-start overflow-y-auto overscroll-contain pr-1")}>
         {groups.map(({ div, list }) => {
           const count = list.filter((d) => visited(d.slug)).length;
           const isOpen = isOpenFor(div);
           return (
-            <div key={div} className="rounded-2xl border border-line bg-paper">
+            <div key={div} className="min-w-0 rounded-2xl border border-line bg-paper">
               <div className="flex items-center gap-2 pr-3">
                 <button
                   aria-expanded={isOpen}
                   aria-controls={`dp-${div}`}
                   onClick={() => setOpen((o) => ({ ...o, [div]: !isOpen }))}
-                  className="flex min-h-14 flex-1 items-center gap-3 rounded-2xl px-4 text-left transition hover:bg-moss/60"
+                  className="flex min-h-14 min-w-0 flex-1 items-center gap-3 rounded-2xl px-4 text-left transition hover:bg-moss/60"
                 >
                   <span className="grid size-9 shrink-0 place-items-center rounded-full bg-emerald-soft text-sm font-bold text-forest">{list.length}</span>
                   <span className="min-w-0 flex-1">

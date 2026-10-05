@@ -1,32 +1,11 @@
 import { NextResponse } from "next/server";
 import { publishProfile, removeProfile, sanitize } from "@/lib/profileStore";
-
-const hits = new Map<string, { n: number; reset: number }>();
-
-function limited(req: Request) {
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "local";
-  const now = Date.now();
-  const h = hits.get(ip);
-  if (!h || h.reset < now) {
-    hits.set(ip, { n: 1, reset: now + 60_000 });
-    return false;
-  }
-  return ++h.n > 30;
-}
-
-async function body(req: Request) {
-  const len = Number(req.headers.get("content-length") ?? 0);
-  if (len > 30_000) return null;
-  try {
-    return (await req.json()) as { [k: string]: unknown };
-  } catch {
-    return null;
-  }
-}
+import { limited, readJson, sameOrigin } from "@/lib/apiGuard";
 
 export async function POST(req: Request) {
-  if (limited(req)) return NextResponse.json({ error: "Too many requests" }, { status: 429 });
-  const b = await body(req);
+  if (!sameOrigin(req)) return NextResponse.json({ error: "Not allowed" }, { status: 403 });
+  if (limited(req, "profile", 30)) return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  const b = await readJson(req, 30_000);
   const data = sanitize(b?.data);
   if (!b || !data) return NextResponse.json({ error: "Invalid profile" }, { status: 400 });
   try {
@@ -42,8 +21,9 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  if (limited(req)) return NextResponse.json({ error: "Too many requests" }, { status: 429 });
-  const b = await body(req);
+  if (!sameOrigin(req)) return NextResponse.json({ error: "Not allowed" }, { status: 403 });
+  if (limited(req, "profile", 30)) return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  const b = await readJson(req, 30_000);
   if (!b || typeof b.id !== "string" || typeof b.token !== "string") return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   try {
     const ok = await removeProfile(b.id, b.token);

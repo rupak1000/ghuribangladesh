@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bookmark, Compass, Frame, Globe, HelpCircle, Home, Languages, LogOut, Map as MapIcon, Search, User } from "lucide-react";
+import { Bookmark, Compass, Frame, Globe, HelpCircle, Home, Languages, LogOut, Map as MapIcon, Route, Search, User, Utensils } from "lucide-react";
 import { useState } from "react";
 import { actions, useStore } from "@/lib/store";
 import { uiActions } from "@/lib/ui";
@@ -58,6 +58,7 @@ function ProfileMenu() {
             <p className="truncate px-3 py-2 text-sm font-semibold">{user.name}</p>
             <Link href="/profile" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><User className="size-4" /> {t("Profile")}</Link>
             <a href={profileLink ? `/u/${profileLink.id}` : "/profile#public-profile"} onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><Globe className="size-4" /> <T>My public profile</T></a>
+            <Link href="/trips" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><Route className="size-4" /> <T>Trip Planner</T></Link>
             <Link href="/wall-map" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><Frame className="size-4" /> <T>Wall map</T></Link>
             <Link href="/help" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><HelpCircle className="size-4" /> <T>Help &amp; guide</T></Link>
             <Link href="/saved" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><Bookmark className="size-4" /> {t("Saved")}</Link>
@@ -108,9 +109,9 @@ export function Header() {
           <button onClick={uiActions.openSearch} aria-label={t("Search")} className="flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-ink/75 transition hover:bg-ink/5 lg:hidden">
             <Search className="size-[18px]" />
           </button>
-          <Link href="/help" aria-label={t("Help and guide")} className="hidden h-11 min-w-11 items-center justify-center rounded-full text-ink/75 transition hover:bg-ink/5 md:flex"><HelpCircle className="size-[18px]" /></Link>
+          <Link href="/help" aria-label={t("Help and guide")} className="hidden h-11 min-w-11 items-center justify-center rounded-full text-ink/75 transition hover:bg-ink/5 lg:flex"><HelpCircle className="size-[18px]" /></Link>
           <LangToggle />
-          <div className={user ? "hidden md:block" : ""}><ProfileMenu /></div>
+          <ProfileMenu />
         </div>
       </div>
     </header>
@@ -120,7 +121,7 @@ export function Header() {
 const tabs = [
   { href: "/", label: "Home", icon: Home },
   { href: "/explore", label: "Explore", icon: Compass },
-  { href: "/saved", label: "Saved", icon: Bookmark },
+  { href: "/food", label: "Food", icon: Utensils },
   { href: "/my-map", label: "My Map", icon: MapIcon },
   { href: "/profile", label: "Profile", icon: User },
 ];

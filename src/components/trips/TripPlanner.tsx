@@ -91,7 +91,7 @@ function Finder() {
       <label className="relative block">
         <span className="sr-only"><T>Search districts and places</T></span>
         <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted" aria-hidden />
-        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t("Search a district or place…")} className="h-12 w-full rounded-full border border-line bg-white pl-11 pr-4 text-base outline-none focus:border-emerald md:h-11 md:text-sm" />
+        <input maxLength={80} value={q} onChange={(e) => setQ(e.target.value)} placeholder={t("Search a district or place…")} className="h-12 w-full rounded-full border border-line bg-white pl-11 pr-4 text-base outline-none focus:border-emerald md:h-11 md:text-sm" />
       </label>
       <p className="mb-1 mt-3 text-xs font-bold uppercase tracking-wider text-muted">{q.trim() ? "Matches" : "Popular places"}</p>
       <ul className="divide-y divide-line">
@@ -235,7 +235,7 @@ function AddStop({ day, used, onAdd }: { day: TripDay; used: Set<string>; onAdd:
           }
         }}
       >
-        <input value={text} onChange={(e) => setText(e.target.value)} placeholder={t("Or write your own")} aria-label={t("Custom activity")} className="h-11 min-w-0 flex-1 rounded-full border border-line bg-white px-4 text-sm outline-none focus:border-emerald" />
+        <input maxLength={120} value={text} onChange={(e) => setText(e.target.value)} placeholder={t("Or write your own")} aria-label={t("Custom activity")} className="h-11 min-w-0 flex-1 rounded-full border border-line bg-white px-4 text-sm outline-none focus:border-emerald" />
         <button aria-label={t("Add custom activity")} className="grid size-11 shrink-0 place-items-center rounded-full bg-forest text-white hover:bg-forest-2"><Plus className="size-4" /></button>
       </form>
       <button onClick={() => setOpen(false)} className="min-h-11 text-sm font-semibold text-muted hover:underline"><T>Done</T></button>
@@ -271,7 +271,7 @@ function Itinerary({ trip, setTrip, onRegenerate, onSave, saved }: { trip: Trip;
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <p className="eyebrow"><T>Suggested Itinerary</T></p>
-          <input
+          <input maxLength={60}
             value={trip.name}
             onChange={(e) => setTrip({ ...trip, name: e.target.value })}
             aria-label={t("Trip name")}

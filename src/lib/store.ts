@@ -5,6 +5,7 @@ import { districts, getPlace, places, foods } from "./data";
 import type { FoodMark, Mark } from "./types";
 import type { TransportPref } from "./travel";
 import type { StayLevel } from "./tripBudget";
+import type { AccountSnapshot } from "./accountSnapshot";
 export { achievements, type Achievement } from "./achievements";
 
 export interface User {
@@ -51,6 +52,7 @@ export interface State {
   lang: Lang;
   mapTheme: string;
   homeDistrict: string | null;
+  account: { email: string | null } | null;
   profileLink: { id: string; token: string } | null;
   user: User | null;
   districtMarks: MarkSet<Mark>;
@@ -69,6 +71,7 @@ const INITIAL: State = {
   lang: "en",
   mapTheme: "natural",
   homeDistrict: null,
+  account: null,
   profileLink: null,
   user: null,
   districtMarks: {},
@@ -115,6 +118,13 @@ function getSnapshot(): State {
 }
 
 export const getLink = () => getSnapshot().profileLink;
+export const getStoreState = () => getSnapshot();
+export function subscribeStore(fn: () => void) {
+  listeners.add(fn);
+  return () => {
+    listeners.delete(fn);
+  };
+}
 
 export function useStore(): State {
   return useSyncExternalStore(
@@ -150,6 +160,23 @@ export const actions = {
   },
   setMapTheme(mapTheme: string) {
     set({ mapTheme });
+  },
+  setAccount(account: { email: string | null } | null) {
+    set({ account });
+  },
+  applySnapshot(snap: AccountSnapshot) {
+    const cur = getSnapshot();
+    set({
+      districtMarks: snap.districtMarks,
+      placeMarks: snap.placeMarks,
+      foodMarks: snap.foodMarks,
+      trips: snap.trips,
+      homeDistrict: snap.profile.homeDistrict,
+      mapTheme: snap.profile.mapTheme,
+      lang: snap.profile.lang,
+      user: { name: snap.profile.name, email: cur.account?.email ?? cur.user?.email ?? "", bio: snap.profile.bio },
+      isSample: false,
+    });
   },
   setHomeDistrict(homeDistrict: string | null) {
     set({ homeDistrict });
@@ -260,7 +287,7 @@ export const actions = {
     });
   },
   reset() {
-    set({ ...INITIAL, hydrated: true, lang: getSnapshot().lang, mapTheme: getSnapshot().mapTheme, homeDistrict: getSnapshot().homeDistrict, profileLink: getSnapshot().profileLink, user: getSnapshot().user, isSample: false });
+    set({ ...INITIAL, hydrated: true, lang: getSnapshot().lang, mapTheme: getSnapshot().mapTheme, homeDistrict: getSnapshot().homeDistrict, account: getSnapshot().account, profileLink: getSnapshot().profileLink, user: getSnapshot().user, isSample: false });
   },
 };
 

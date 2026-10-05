@@ -11,6 +11,7 @@ import { Button } from "../ui/Button";
 import { Sheet } from "../ui/Sheet";
 import { T } from "@/components/T";
 import { useT } from "@/lib/i18n";
+import { siteOrigin } from "@/lib/site";
 
 type Outcome = { ok: true; id: string } | { ok: false; error: string };
 
@@ -29,7 +30,7 @@ export function ShareTripSheet({ trip, onClose }: { trip: Trip; onClose: () => v
   const state = !outcome
     ? { status: "loading" as const, url: undefined, error: undefined }
     : outcome.ok
-      ? { status: "ready" as const, url: `${window.location.origin}/trip/${outcome.id}`, error: undefined }
+      ? { status: "ready" as const, url: `${siteOrigin()}/trip/${outcome.id}`, error: undefined }
       : { status: "failed" as const, url: undefined, error: outcome.error };
 
   const message = `${trip.name}: a ${trip.days.length}-day plan on Ghuri Bangladesh.`;

@@ -11,6 +11,7 @@ import { useT } from "@/lib/i18n";
 import { Button } from "./ui/Button";
 import { Sheet } from "./ui/Sheet";
 import { T } from "@/components/T";
+import { siteOrigin } from "@/lib/site";
 
 interface Props {
   open: boolean;
@@ -40,7 +41,7 @@ function ShareBody({ onClose, data }: Omit<Props, "open">) {
     };
   }, [id, data]);
 
-  const url = id ? `${window.location.origin}/u/${id}` : id === null ? `${window.location.origin}/u?${encodeShare(data)}` : "";
+  const url = id ? `${siteOrigin()}/u/${id}` : id === null ? `${siteOrigin()}/u?${encodeShare(data)}` : "";
   const text = `${data.name} has explored ${data.visited.length} of 64 districts of Bangladesh on Ghuri Bangladesh. #GhuriBangladesh`;
 
   const copy = async () => {

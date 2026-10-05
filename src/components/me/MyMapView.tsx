@@ -93,7 +93,7 @@ export function MyMapView() {
             </button>
           ))}
         </div>
-        <div className="flex shrink-0 flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 md:justify-end">
           <Button variant="secondary" onClick={download}><Download className="size-4" /> {t("Download My Map")}</Button>
           <LinkButton href="/wall-map" variant="secondary"><Frame className="size-4" /> <T>Create your own wall map</T></LinkButton>
           <Button onClick={gate(() => setShare(true))}><Share2 className="size-4" /> {t("Share My Bangladesh")}</Button>

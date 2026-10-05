@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  id        String   @id
+  tokenHash String
+  data      Json
+  updatedAt DateTime @default(now())
+}
+
+model SharedTrip {
+  id        String   @id
+  data      Json
+  createdAt DateTime @default(now())
+}
+
+model Account {
+  id           String        @id
+  email        String?       @unique
+  createdAt    DateTime      @default(now())
+  sessions     Session[]
+  state        AccountState?
+}
+
+model Session {
+  id        String   @id
+  accountId String
+  tokenHash String   @unique
+  expiresAt DateTime
+  account   Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  @@index([accountId])
+}
+
+model AccountState {
+  accountId String   @id
+  data      Json
+  updatedAt DateTime @default(now())
+  account   Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
+}
