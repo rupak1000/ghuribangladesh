@@ -1,260 +1,217 @@
 {
-  "bagerhat--katka-kotka-sundarbans-beach": {
-    "url": "/foods/bagerhat--katka-kotka-sundarbans-beach.jpg",
-    "author": "Photo from Pinterest (photographer credit visible on the photo)",
-    "license": "Used with the site owner's decision; permission not confirmed",
+  "sylhet--shatkora-beef": {
+    "author": "Facebook (original owner not recorded)",
+    "license": "Shared by the site owner",
     "page": ""
   },
-  "bagerhat--sundarbans-honey": {
-    "url": "/foods/bagerhat--sundarbans-honey.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
+  "rajshahi--himsagar-mango": {
+    "author": "Royals Plant (royalsplant.com)",
     "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "bandarban--bamboo-chicken": {
-    "url": "/foods/bandarban--bamboo-chicken.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "bandarban--keokradang": {
-    "url": "/foods/bandarban--keokradang.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "barishal--hilsa-with-panta-bhat": {
-    "url": "/foods/barishal--hilsa-with-panta-bhat.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "bogura--bogura-doi-shops": {
-    "url": "/foods/bogura--bogura-doi-shops.jpg",
-    "author": "Bogurar Doi (bogurardoi.com) — the shop's own photo",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "bogura--mahasthangarh": {
-    "url": "/foods/bogura--mahasthangarh.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "brahmanbaria--fresh-river-fish-curry": {
-    "url": "/foods/brahmanbaria--fresh-river-fish-curry.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "chapai-nawabganj--langra-mango": {
-    "url": "/foods/chapai-nawabganj--langra-mango.jpg",
-    "author": "Product photo on Amazon (m.media-amazon.com)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "chuadanga--chuadanga-rice-snacks": {
-    "url": "/foods/chuadanga--chuadanga-rice-snacks.jpg",
-    "author": "Dhaka Mail (dhakamail.com)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": "https://dhakamail.com/"
-  },
-  "coxs-bazar--lobster-grill": {
-    "url": "/foods/coxs-bazar--lobster-grill.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
+    "page": "https://royalsplant.com/product/himsagar-mango-grafted-fruit-plant/"
   },
   "dhaka--haji-biryani": {
-    "url": "/foods/dhaka--haji-biryani.jpg",
     "author": "Haji Biryani (hajibiriyani.com)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": "https://hajibiriyani.com/"
   },
-  "dinajpur--katarivog-rice-beef": {
-    "url": "/foods/dinajpur--katarivog-rice-beef.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "faridpur--date-palm-jaggery-khejur-gur": {
-    "url": "/foods/faridpur--date-palm-jaggery-khejur-gur.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
   "gazipur--beef-tehari": {
-    "url": "/foods/gazipur--beef-tehari.jpg",
     "author": "Cookish Creation (cookishcreation.com)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": "https://cookishcreation.com/"
   },
-  "gopalganj--koi-fish-bhuna": {
-    "url": "/foods/gopalganj--koi-fish-bhuna.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "habiganj--habiganj-shatkora-curry": {
-    "url": "/foods/habiganj--habiganj-shatkora-curry.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "jhalakathi--jhalakathi-guava": {
-    "url": "/foods/jhalakathi--jhalakathi-guava.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "jhenaidah--khejur-gur": {
-    "url": "/foods/jhenaidah--khejur-gur.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "joypurhat--joypurhat-rice-pitha": {
-    "url": "/foods/joypurhat--joypurhat-rice-pitha.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "khulna--hiron-point-nilkamal": {
-    "url": "/foods/khulna--hiron-point-nilkamal.jpg",
-    "author": "MAM Holidays (mamholidays.net)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "khulna--sundarbans-boat-tours": {
-    "url": "/foods/khulna--sundarbans-boat-tours.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "kishoreganj--haor-fish-curry": {
-    "url": "/foods/kishoreganj--haor-fish-curry.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "kushtia--kushtia-tilkuta": {
-    "url": "/foods/kushtia--kushtia-tilkuta.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "lakshmipur--hilsa-paturi-lakshmipur": {
-    "url": "/foods/lakshmipur--hilsa-paturi-lakshmipur.jpg",
-    "author": "Not Out of the Box (notoutofthebox.in)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": "https://notoutofthebox.in/"
-  },
-  "madaripur--mustard-hilsa-shorshe-ilish": {
-    "url": "/foods/madaripur--mustard-hilsa-shorshe-ilish.jpg",
+  "narsingdi--mishti-doi": {
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
   "manikganj--pabda-fish-curry": {
-    "url": "/foods/manikganj--pabda-fish-curry.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "meherpur--meherpur-mango": {
-    "url": "/foods/meherpur--meherpur-mango.jpg",
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
   "munshiganj--ilish-pulao": {
-    "url": "/foods/munshiganj--ilish-pulao.jpg",
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
-  "naogaon--naogaon-mango-himsagar": {
-    "url": "/foods/naogaon--naogaon-mango-himsagar.jpg",
-    "author": "Dhaka Tribune (dhakatribune.com)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": "https://www.dhakatribune.com/"
-  },
-  "narail--narail-chhana-sweet-roshogolla": {
-    "url": "/foods/narail--narail-chhana-sweet-roshogolla.jpg",
+  "kishoreganj--haor-fish-curry": {
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
-  "narsingdi--mishti-doi": {
-    "url": "/foods/narsingdi--mishti-doi.jpg",
+  "faridpur--date-palm-jaggery-khejur-gur": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "gopalganj--koi-fish-bhuna": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "madaripur--mustard-hilsa-shorshe-ilish": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "rajbari--ilish-bhapa-rajbari": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "coxs-bazar--lobster-grill": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "bandarban--bamboo-chicken": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "rangamati--bamboo-chicken": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "lakshmipur--hilsa-paturi-lakshmipur": {
+    "author": "Not Out of the Box (notoutofthebox.in)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": "https://notoutofthebox.in/"
+  },
+  "brahmanbaria--fresh-river-fish-curry": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "habiganj--habiganj-shatkora-curry": {
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
   "natore--natore-kacha-golla": {
-    "url": "/foods/natore--natore-kacha-golla.jpg",
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
+  },
+  "chapai-nawabganj--langra-mango": {
+    "author": "Product photo on Amazon (m.media-amazon.com)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "naogaon--naogaon-mango-himsagar": {
+    "author": "Dhaka Tribune (dhakatribune.com)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": "https://www.dhakatribune.com/"
   },
   "pabna--pabna-ghee": {
-    "url": "/foods/pabna--pabna-ghee.jpg",
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
-  "patuakhali--kuakata-seafood": {
-    "url": "/foods/patuakhali--kuakata-seafood.jpg",
-    "author": "Food delivery listing (images.deliveryhero.io)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "rajbari--ilish-bhapa-rajbari": {
-    "url": "/foods/rajbari--ilish-bhapa-rajbari.jpg",
+  "joypurhat--joypurhat-rice-pitha": {
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
-  "rajshahi--himsagar-mango": {
-    "url": "/foods/rajshahi--himsagar-mango.jpg",
-    "author": "Royals Plant (royalsplant.com)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": "https://royalsplant.com/product/himsagar-mango-grafted-fruit-plant/"
-  },
-  "rangamati--bamboo-chicken": {
-    "url": "/foods/rangamati--bamboo-chicken.jpg",
-    "author": "Source not recorded (from a Google Images thumbnail)",
-    "license": "Used with the site owner's decision; permission not confirmed",
-    "page": ""
-  },
-  "rangpur--rangpur-bhuna-khichuri": {
-    "url": "/foods/rangpur--rangpur-bhuna-khichuri.jpg",
+  "bagerhat--sundarbans-honey": {
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
   "satkhira--bagda-prawn-malaikari": {
-    "url": "/foods/satkhira--bagda-prawn-malaikari.jpg",
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "jhenaidah--khejur-gur": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "narail--narail-chhana-sweet-roshogolla": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "chuadanga--chuadanga-rice-snacks": {
+    "author": "Dhaka Mail (dhakamail.com)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": "https://dhakamail.com/"
+  },
+  "kushtia--kushtia-tilkuta": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "meherpur--meherpur-mango": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "barishal--hilsa-with-panta-bhat": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "jhalakathi--jhalakathi-guava": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "patuakhali--kuakata-seafood": {
+    "author": "Food delivery listing (images.deliveryhero.io)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "rangpur--rangpur-bhuna-khichuri": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "dinajpur--katarivog-rice-beef": {
     "author": "Source not recorded (from a Google Images thumbnail)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
   "sherpur--garo-style-pork-curry": {
-    "url": "/foods/sherpur--garo-style-pork-curry.jpg",
     "author": "Daily Ittefaq (ittefaq.com.bd)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": "https://www.ittefaq.com.bd/"
   },
+  "bogura--bogura-doi-shops": {
+    "author": "Bogurar Doi (bogurardoi.com) — the shop's own photo",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "khulna--sundarbans-boat-tours": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "bogura--mahasthangarh": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "bandarban--keokradang": {
+    "author": "Source not recorded (from a Google Images thumbnail)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
   "sylhet--bisnakandi": {
-    "url": "/foods/sylhet--bisnakandi.jpg",
     "author": "Trip.com (tripcdn.com)",
     "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   },
-  "sylhet--shatkora-beef": {
-    "url": "/foods/sylhet--shatkora-beef.jpg",
-    "author": "Facebook (original owner not recorded)",
-    "license": "Shared by the site owner",
+  "khulna--hiron-point-nilkamal": {
+    "author": "MAM Holidays (mamholidays.net)",
+    "license": "Used with the site owner's decision; permission not confirmed",
+    "page": ""
+  },
+  "bagerhat--katka-kotka-sundarbans-beach": {
+    "author": "Photo from Pinterest (photographer credit visible on the photo)",
+    "license": "Used with the site owner's decision; permission not confirmed",
     "page": ""
   }
 }

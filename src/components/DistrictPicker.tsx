@@ -98,7 +98,7 @@ export function DistrictPicker({ mode, className, defaultOpen }: Props) {
         </div>
 
       {expanded && (
-      <div id="district-picker-list" className={cn("mt-4 grid grid-cols-[minmax(0,1fr)] gap-3 md:grid-cols-2 md:gap-4 xl:grid-cols-4", mode === "browse" && "max-h-[24rem] content-start overflow-y-auto overscroll-contain pr-1")}>
+      <div id="district-picker-list" className={cn("mt-4 grid grid-cols-[minmax(0,1fr)] gap-3 md:grid-cols-2 md:gap-4 xl:grid-cols-4", mode === "browse" && "max-h-[24rem] content-start overflow-y-auto pr-1")}>
         {groups.map(({ div, list }) => {
           const count = list.filter((d) => visited(d.slug)).length;
           const isOpen = isOpenFor(div);

@@ -34,6 +34,24 @@ function LangToggle() {
   );
 }
 
+function AccountLinks({ onNavigate }: { onNavigate: () => void }) {
+  const { user, profileLink } = useStore();
+  const { t } = useT();
+  const row = "flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm hover:bg-moss";
+  return (
+    <>
+      <p className="truncate px-3 py-2 text-sm font-semibold">{user?.name}</p>
+      <Link href="/profile" onClick={onNavigate} className={row}><User className="size-4" /> {t("Profile")}</Link>
+      <a href={profileLink ? `/u/${profileLink.id}` : "/profile#public-profile"} onClick={onNavigate} className={row}><Globe className="size-4" /> <T>My public profile</T></a>
+      <Link href="/trips" onClick={onNavigate} className={row}><Route className="size-4" /> <T>Trip Planner</T></Link>
+      <Link href="/wall-map" onClick={onNavigate} className={row}><Frame className="size-4" /> <T>Wall map</T></Link>
+      <Link href="/help" onClick={onNavigate} className={row}><HelpCircle className="size-4" /> <T>Help &amp; guide</T></Link>
+      <Link href="/saved" onClick={onNavigate} className={row}><Bookmark className="size-4" /> {t("Saved")}</Link>
+      <button onClick={() => { actions.signOut(); onNavigate(); }} className={`${row} w-full`}><LogOut className="size-4" /> {t("Sign out")}</button>
+    </>
+  );
+}
+
 function ProfileMenu() {
   const { user } = useStore();
   const { t } = useT();
@@ -55,14 +73,7 @@ function ProfileMenu() {
         <>
           <button className="fixed inset-0 z-30 cursor-default" aria-label={t("Close menu")} onClick={() => setOpen(false)} />
           <div className="absolute right-0 z-40 mt-2 w-52 overflow-hidden rounded-2xl border border-line bg-card p-1.5 shadow-lift animate-pop">
-            <p className="truncate px-3 py-2 text-sm font-semibold">{user.name}</p>
-            <Link href="/profile" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><User className="size-4" /> {t("Profile")}</Link>
-            <a href={profileLink ? `/u/${profileLink.id}` : "/profile#public-profile"} onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><Globe className="size-4" /> <T>My public profile</T></a>
-            <Link href="/trips" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><Route className="size-4" /> <T>Trip Planner</T></Link>
-            <Link href="/wall-map" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><Frame className="size-4" /> <T>Wall map</T></Link>
-            <Link href="/help" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><HelpCircle className="size-4" /> <T>Help &amp; guide</T></Link>
-            <Link href="/saved" onClick={() => setOpen(false)} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><Bookmark className="size-4" /> {t("Saved")}</Link>
-            <button onClick={() => { actions.signOut(); setOpen(false); }} className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-moss"><LogOut className="size-4" /> {t("Sign out")}</button>
+            <AccountLinks onNavigate={() => setOpen(false)} />
           </div>
         </>
       )}
@@ -129,17 +140,35 @@ const tabs = [
 export function BottomNav() {
   const path = usePathname();
   const { t } = useT();
+  const { user } = useStore();
+  const [menu, setMenu] = useState(false);
+  const tabCls = (active: boolean) => cn("flex h-[4.25rem] w-full flex-col items-center justify-center gap-1 text-[11px] font-semibold transition active:scale-95", active ? "text-forest" : "text-muted hover:text-ink");
   return (
     <nav className="safe-bottom fixed inset-x-0 bottom-0 z-40 print:hidden border-t border-line bg-card/95 shadow-[0_-8px_24px_-16px_rgb(10_51_38/0.3)] backdrop-blur md:hidden" aria-label="Bottom">
+      {menu && user && (
+        <>
+          <button className="fixed inset-0 -z-10 cursor-default bg-forest/20" aria-label={t("Close menu")} onClick={() => setMenu(false)} />
+          <div className="absolute bottom-full right-2 mb-2 w-60 overflow-hidden rounded-2xl border border-line bg-card p-1.5 shadow-lift animate-pop">
+            <AccountLinks onNavigate={() => setMenu(false)} />
+          </div>
+        </>
+      )}
       <ul className="grid grid-cols-5">
         {tabs.map(({ href, label, icon: Icon }) => {
           const active = isActive(path, href);
+          const inner = (
+            <>
+              <span className={cn("grid h-8 w-14 place-items-center rounded-full transition", (active || (menu && href === "/profile")) && "bg-emerald-soft")}><Icon className="size-[22px]" /></span>
+              {t(label)}
+            </>
+          );
           return (
             <li key={href}>
-              <Link href={href} aria-current={active ? "page" : undefined} className={cn("flex h-[4.25rem] flex-col items-center justify-center gap-1 text-[11px] font-semibold transition active:scale-95", active ? "text-forest" : "text-muted hover:text-ink")}>
-                <span className={cn("grid h-8 w-14 place-items-center rounded-full transition", active && "bg-emerald-soft")}><Icon className="size-[22px]" /></span>
-                {t(label)}
-              </Link>
+              {href === "/profile" && user ? (
+                <button type="button" aria-haspopup="menu" aria-expanded={menu} onClick={() => setMenu((v) => !v)} className={tabCls(active || menu)}>{inner}</button>
+              ) : (
+                <Link href={href} aria-current={active ? "page" : undefined} onClick={() => setMenu(false)} className={tabCls(active)}>{inner}</Link>
+              )}
             </li>
           );
         })}

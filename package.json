@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "postinstall": "prisma generate",
     "db:migrate": "prisma migrate deploy",
-    "db:import": "node scripts/import-json-to-db.mts"
+    "db:import": "node scripts/import-json-to-db.mts",
+    "photos": "node scripts/scan-my-photos.mts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

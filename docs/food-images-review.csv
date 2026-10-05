@@ -1,0 +1,335 @@
+index,id,name,verdict,note
+0,dhaka--haji-biryani,Haji Biryani,OK,
+1,dhaka--bakarkhani,Bakarkhani,OK,
+2,dhaka--chotpoti-fuchka,Chotpoti & Fuchka,OK,
+3,gazipur--gazipur-pineapple,Gazipur Pineapple,OK,
+4,narayanganj--sonargaon-mishti,Sonargaon Mishti,OK,
+5,narsingdi--narsingdi-lychee,Narsingdi Lychee,OK,
+6,manikganj--river-fish-curry,River Fish Curry,WEAK,generic or repeated photo
+7,munshiganj--munshiganj-potatoes,Munshiganj Potatoes,BAD,"potato trading, not potatoes"
+8,tangail--porabari-chomchom,Porabari Chomchom,OK,
+9,kishoreganj--haor-fish-curry,Haor Fish Curry,BAD,"a pan of something yellow, not fish curry"
+10,faridpur--date-palm-jaggery-khejur-gur,Date-Palm Jaggery (Khejur Gur),BAD,"a fruit, not jaggery"
+11,gopalganj--gopalganj-chhana-mishti,Gopalganj Chhana Mishti,OK,
+12,madaripur--mustard-hilsa-shorshe-ilish,Mustard Hilsa (Shorshe Ilish),OK,
+13,rajbari--padma-fish-fry,Padma Fish Fry,WEAK,generic or repeated photo
+14,shariatpur--padma-hilsa,Padma Hilsa,OK,
+15,chattogram--mezbani-beef,Mezbani Beef,OK,
+16,chattogram--kala-bhuna,Kala Bhuna,OK,
+17,chattogram--chaatgaiya-shutki,Chaatgaiya Shutki,OK,
+18,coxs-bazar--dried-fish-shutki,Dried Fish (Shutki),OK,
+19,coxs-bazar--grilled-seafood-platter,Grilled Seafood Platter,OK,
+20,coxs-bazar--crab-masala,Crab Masala,BAD,"a fried fish, not crab"
+21,bandarban--bamboo-chicken,Bamboo Chicken,OK,
+22,bandarban--hill-pajon,Hill Pajon,OK,
+23,rangamati--kaptai-lake-fish,Kaptai Lake Fish,OK,
+24,rangamati--bamboo-chicken,Bamboo Chicken,OK,
+25,khagrachhari--bamboo-shoot-curry,Bamboo Shoot Curry,OK,
+26,feni--feni-chitoi-pitha,Feni Chitoi Pitha,OK,
+27,noakhali--hatiya-buffalo-doi,Hatiya Buffalo Doi,OK,
+28,lakshmipur--meghna-hilsa,Meghna Hilsa,OK,
+29,chandpur--chandpur-hilsa,Chandpur Hilsa,OK,
+30,cumilla--cumilla-rasmalai,Cumilla Rasmalai,OK,
+31,cumilla--khadi-fabric-sweets,Khadi Fabric & Sweets,OK,
+32,brahmanbaria--fresh-river-fish-curry,Fresh River Fish Curry,WEAK,generic or repeated photo
+33,sylhet--shatkora-beef,Shatkora Beef,BAD,"bread with sauce, not beef"
+34,sylhet--akhni-pulao,Akhni Pulao,OK,
+35,moulvibazar--seven-layer-tea,Seven-Layer Tea,OK,
+36,moulvibazar--srimangal-pineapple,Srimangal Pineapple,OK,
+37,habiganj--habiganj-shatkora-curry,Habiganj Shatkora Curry,WEAK,generic or repeated photo
+38,sunamganj--haor-fish,Haor Fish,OK,
+39,rajshahi--himsagar-mango,Himsagar Mango,WEAK,generic or repeated photo
+40,natore--natore-kacha-golla,Natore Kacha Golla,OK,
+41,chapai-nawabganj--langra-mango,Langra Mango,BAD,mango garden
+42,naogaon--naogaon-rice-pitha,Naogaon Rice Pitha,OK,
+43,pabna--pabna-ghee,Pabna Ghee,OK,
+44,bogura--bogura-doi,Bogura Doi,OK,
+45,bogura--bogura-mishti,Bogura Mishti,OK,
+46,joypurhat--joypurhat-rice-pitha,Joypurhat Rice Pitha,WEAK,generic or repeated photo
+47,sirajganj--jamuna-river-fish,Jamuna River Fish,WEAK,generic or repeated photo
+48,khulna--chitrangi-fish-fry,Chitrangi Fish Fry,OK,
+49,bagerhat--bagda-chingri-prawn,Bagda Chingri (Prawn),OK,
+50,satkhira--bagda-prawn-malaikari,Bagda Prawn Malaikari,OK,
+51,jashore--date-palm-sap-khejur-rosh,Date-Palm Sap (Khejur Rosh),OK,
+52,jhenaidah--khejur-gur,Khejur Gur,BAD,"a thali meal, not jaggery"
+53,magura--magura-pitha,Magura Pitha,OK,
+54,narail--narail-chhana-sweet,Narail Chhana Sweet,OK,
+55,chuadanga--chuadanga-rice-snacks,Chuadanga Rice Snacks,OK,
+56,kushtia--kushtia-tilkuta,Kushtia Tilkuta,OK,
+57,meherpur--meherpur-fish-fry,Meherpur Fish Fry,WEAK,generic or repeated photo
+58,barishal--hilsa-with-panta-bhat,Hilsa with Panta Bhat,OK,
+59,bhola--bhola-buffalo-milk-doi,Bhola Buffalo Milk Doi,OK,
+60,barguna--barguna-coconut-sweets,Barguna Coconut Sweets,WEAK,generic or repeated photo
+61,jhalakathi--jhalakathi-guava,Jhalakathi Guava,OK,
+62,patuakhali--kuakata-seafood,Kuakata Seafood,OK,
+63,pirojpur--pirojpur-guava,Pirojpur Guava,BAD,river scene
+64,rangpur--rangpur-shatkora-beef,Rangpur Shatkora Beef,BAD,"rice platter, not shatkora beef"
+65,dinajpur--katarivog-rice-beef,Katarivog Rice & Beef,OK,
+66,thakurgaon--thakurgaon-khichuri,Thakurgaon Khichuri,BAD,"plates of bhorta, not khichuri"
+67,panchagarh--panchagarh-tea,Panchagarh Tea,OK,
+68,nilphamari--nilphamari-pitha,Nilphamari Pitha,OK,
+69,lalmonirhat--lalmonirhat-fish-curry,Lalmonirhat Fish Curry,OK,
+70,kurigram--kurigram-pitha,Kurigram Pitha,BAD,man cooking at a stall
+71,gaibandha--gaibandha-fish-curry,Gaibandha Fish Curry,OK,
+72,mymensingh--mymensingh-muktagachha-monda,Mymensingh Muktagachha Monda,OK,
+73,jamalpur--jamalpur-pitha,Jamalpur Pitha,BAD,"cooked meat, not pitha"
+74,netrakona--netrakona-haor-fish,Netrakona Haor Fish,OK,
+75,sherpur--sherpur-pitha,Sherpur Pitha,BAD,"minced meat, not pitha"
+76,dhaka--dhakaiya-kacchi-biryani,Dhakaiya Kacchi Biryani,OK,
+77,dhaka--borhani,Borhani,OK,
+78,dhaka--old-dhaka-jilapi,Old Dhaka Jilapi,WEAK,generic or repeated photo
+79,gazipur--jackfruit-kathal,Jackfruit (Kathal),WEAK,generic or repeated photo
+80,gazipur--bhorta-platter,Bhorta Platter,OK,
+81,narayanganj--fried-hilsa-ilish-bhaja,Fried Hilsa (Ilish Bhaja),OK,
+82,narayanganj--shorshe-bata-maach,Shorshe Bata Maach,OK,
+83,narsingdi--mishti-doi,Mishti Doi,OK,
+84,narsingdi--narsingdi-jilapi,Narsingdi Jilapi,OK,
+85,manikganj--pabda-fish-curry,Pabda Fish Curry,OK,
+86,manikganj--bhapa-pitha,Bhapa Pitha,OK,
+87,munshiganj--rui-fish-jhol,Rui Fish Jhol,OK,
+88,munshiganj--patishapta,Patishapta,WEAK,generic or repeated photo
+89,tangail--tangail-mishti-doi,Tangail Mishti Doi,OK,
+90,tangail--chitoi-pitha,Chitoi Pitha,WEAK,generic or repeated photo
+91,kishoreganj--shutki-bhuna,Shutki Bhuna,OK,
+92,kishoreganj--doi-chira,Doi-Chira,OK,
+93,faridpur--khejur-gurer-payesh,Khejur Gurer Payesh,OK,
+94,faridpur--ilish-bhapa,Ilish Bhapa,OK,
+95,gopalganj--koi-fish-bhuna,Koi Fish Bhuna,OK,
+96,gopalganj--patishapta-gopalganj,Patishapta (Gopalganj),WEAK,generic or repeated photo
+97,madaripur--bhapa-ilish-madaripur,Bhapa Ilish (Madaripur),OK,
+98,madaripur--chitoi-pitha-madaripur,Chitoi Pitha (Madaripur),WEAK,generic or repeated photo
+99,rajbari--ilish-bhapa-rajbari,Ilish Bhapa (Rajbari),OK,
+100,rajbari--doi-chira-rajbari,Doi-Chira (Rajbari),OK,
+101,shariatpur--shorshe-ilish-shariatpur,Shorshe Ilish (Shariatpur),OK,
+102,shariatpur--tengra-fish-curry,Tengra Fish Curry,OK,
+103,chattogram--karnaphuli-hilsa,Karnaphuli Hilsa,OK,
+104,chattogram--chitoi-pitha-chattogram,Chitoi Pitha (Chattogram),BAD,dough being made
+105,coxs-bazar--pomfret-fry-rupchanda,Pomfret Fry (Rupchanda),OK,
+106,coxs-bazar--loitta-fry,Loitta Fry,OK,
+107,bandarban--hill-pineapple,Hill Pineapple,WEAK,generic or repeated photo
+108,bandarban--bamboo-rice,Bamboo Rice,WEAK,generic or repeated photo
+109,rangamati--hill-pineapple-rangamati,Hill Pineapple (Rangamati),WEAK,generic or repeated photo
+110,rangamati--pitha-in-banana-leaf,Pitha in Banana Leaf,BAD,"woman cooking pitha, not the dish"
+111,khagrachhari--hill-pineapple-khagrachhari,Hill Pineapple (Khagrachhari),WEAK,generic or repeated photo
+112,khagrachhari--bamboo-chicken-khagrachhari,Bamboo Chicken (Khagrachhari),OK,
+113,feni--patishapta-feni,Patishapta (Feni),OK,
+114,feni--narkel-pitha,Narkel Pitha,OK,
+115,noakhali--nakshi-pitha,Nakshi Pitha,OK,
+116,noakhali--hilsa-bhapa-noakhali,Hilsa Bhapa (Noakhali),OK,
+117,lakshmipur--narkel-naru,Narkel Naru,OK,
+118,lakshmipur--shutki-bhuna-lakshmipur,Shutki Bhuna (Lakshmipur),OK,
+119,chandpur--ilish-bhapa-chandpur,Ilish Bhapa (Chandpur),WEAK,generic or repeated photo
+120,chandpur--ilish-paturi,Ilish Paturi,WEAK,generic or repeated photo
+121,cumilla--ilish-bhaja-cumilla,Ilish Bhaja (Cumilla),OK,
+122,cumilla--dal-puri,Dal Puri,OK,
+123,brahmanbaria--dal-puri-brahmanbaria,Dal Puri (Brahmanbaria),OK,
+124,brahmanbaria--shorshe-maach,Shorshe Maach,OK,
+125,sylhet--sylheti-beef-roast,Sylheti Beef Roast,OK,
+126,sylhet--satkora-chicken,Satkora Chicken,OK,
+127,moulvibazar--nilkantha-special-tea,Nilkantha Special Tea,BAD,tea garden scenery
+128,moulvibazar--tea-with-pitha,Tea with Pitha,BAD,"an omelette, not tea with pitha"
+129,habiganj--habiganj-pitha,Habiganj Pitha,OK,
+130,habiganj--haor-fish-fry,Haor Fish Fry,OK,
+131,sunamganj--haor-shutki,Haor Shutki,OK,
+132,sunamganj--sunamganj-pitha,Sunamganj Pitha,OK,
+133,rajshahi--rajshahi-roshmalai,Rajshahi Roshmalai,BAD,no photo
+134,rajshahi--silk-city-mango-shake,Silk City Mango Shake,BAD,"mango garden, not a shake"
+135,natore--natore-roshgolla,Natore Roshgolla,OK,
+136,natore--natore-doi,Natore Doi,OK,
+137,chapai-nawabganj--fazli-mango,Fazli Mango,BAD,mango tree
+138,chapai-nawabganj--mango-pickle-aam-achar,Mango Pickle (Aam Achar),BAD,"mango garden, not pickle"
+139,naogaon--naogaon-mango-himsagar,Naogaon Mango (Himsagar),BAD,mango tree
+140,pabna--pabna-chhana-mishti,Pabna Chhana Mishti,OK,
+141,bogura--bogura-kachagolla,Bogura Kachagolla,OK,
+142,joypurhat--joypurhat-mishti-doi,Joypurhat Mishti Doi,OK,
+143,sirajganj--sirajganj-ilish,Sirajganj Ilish,BAD,"a bhorta, not hilsa"
+144,sirajganj--doi-sirajganj,Doi (Sirajganj),BAD,"wooden boards, not doi"
+145,khulna--khulna-chui-jhal-beef,Khulna Chui Jhal Beef,OK,
+146,khulna--koi-fish-curry-khulna,Koi Fish Curry (Khulna),BAD,"minced bhorta, not fish curry"
+147,bagerhat--bagerhat-mud-crab,Bagerhat Mud Crab,OK,
+148,bagerhat--sundarbans-honey,Sundarbans Honey,BAD,no photo
+149,satkhira--chingri-bhorta,Chingri Bhorta,BAD,"spinach bhorta, not prawn"
+150,satkhira--satkhira-prawn-fry,Satkhira Prawn Fry,OK,
+151,jashore--jashore-khejur-gur,Jashore Khejur Gur,OK,
+152,jashore--jessore-pitha,Jessore Pitha,OK,
+153,jhenaidah--jhenaidah-pitha,Jhenaidah Pitha,OK,
+154,jhenaidah--patali-gur-payesh,Patali Gur Payesh,OK,
+155,magura--magura-khejur-rosh,Magura Khejur Rosh,OK,
+156,narail--narail-fish-curry,Narail Fish Curry,BAD,"minced bhorta, not fish curry"
+157,narail--narail-pitha,Narail Pitha,OK,
+158,chuadanga--chuadanga-pitha,Chuadanga Pitha,OK,
+159,chuadanga--chuadanga-mishti,Chuadanga Mishti,BAD,shop sign
+160,kushtia--kushtia-roshogolla,Kushtia Roshogolla,BAD,"jilapi, not roshogolla"
+161,meherpur--meherpur-mango,Meherpur Mango,BAD,mango garden
+162,meherpur--meherpur-pitha,Meherpur Pitha,OK,
+163,barishal--barishal-hilsa-bhapa,Barishal Hilsa Bhapa,OK,
+164,barishal--amra-hog-plum-pickle,Amra (Hog Plum) Pickle,WEAK,generic or repeated photo
+165,bhola--bhola-ilish,Bhola Ilish,OK,
+166,barguna--barguna-fish-fry,Barguna Fish Fry,OK,
+167,barguna--barguna-coconut,Barguna Coconut,BAD,no photo
+168,jhalakathi--jhalakathi-amra,Jhalakathi Amra,BAD,river scene
+169,patuakhali--kuakata-crab-fry,Kuakata Crab Fry,OK,
+170,patuakhali--patuakhali-ilish,Patuakhali Ilish,OK,
+171,pirojpur--pirojpur-pitha,Pirojpur Pitha,OK,
+172,pirojpur--hilsa-pirojpur,Hilsa (Pirojpur),OK,
+173,rangpur--rangpur-bhuna-khichuri,Rangpur Bhuna Khichuri,OK,
+174,rangpur--rangpur-pitha,Rangpur Pitha,OK,
+175,dinajpur--dinajpur-lychee,Dinajpur Lychee,OK,
+176,dinajpur--kalijira-rice,Kalijira Rice,OK,
+177,thakurgaon--thakurgaon-mishti,Thakurgaon Mishti,OK,
+178,panchagarh--panchagarh-pitha,Panchagarh Pitha,OK,
+179,nilphamari--saidpur-chop,Saidpur Chop,WEAK,generic or repeated photo
+180,lalmonirhat--lalmonirhat-khichuri,Lalmonirhat Khichuri,OK,
+181,kurigram--kurigram-fish-fry,Kurigram Fish Fry,OK,
+182,gaibandha--gaibandha-pitha,Gaibandha Pitha,OK,
+183,mymensingh--mymensingh-pitha,Mymensingh Pitha,OK,
+184,mymensingh--mymensingh-doi,Mymensingh Doi,OK,
+185,jamalpur--jamalpur-mishti,Jamalpur Mishti,OK,
+186,netrakona--netrakona-pitha,Netrakona Pitha,OK,
+187,netrakona--netrakona-shutki,Netrakona Shutki,OK,
+188,sherpur--sherpur-mishti,Sherpur Mishti,OK,
+189,sherpur--garo-style-pork-curry,Garo-style Pork Curry,OK,
+190,naogaon--naogaon-mishti-doi,Naogaon Mishti Doi,OK,
+191,pabna--pabna-doi,Pabna Doi,OK,
+192,joypurhat--joypurhat-khichuri,Joypurhat Khichuri,OK,
+193,magura--magura-doi,Magura Doi,OK,
+194,kushtia--kushtia-padma-fish-fry,Kushtia Padma Fish Fry,OK,
+195,bhola--bhola-pitha,Bhola Pitha,OK,
+196,jhalakathi--jhalakathi-ilish,Jhalakathi Ilish,WEAK,generic or repeated photo
+197,thakurgaon--thakurgaon-pitha,Thakurgaon Pitha,OK,
+198,panchagarh--panchagarh-mishti,Panchagarh Mishti,OK,
+199,nilphamari--nilphamari-mishti,Nilphamari Mishti,OK,
+200,lalmonirhat--lalmonirhat-pitha,Lalmonirhat Pitha,OK,
+201,kurigram--kurigram-mishti,Kurigram Mishti,OK,
+202,gaibandha--gaibandha-mishti,Gaibandha Mishti,OK,
+203,jamalpur--jamalpur-fish-curry,Jamalpur Fish Curry,OK,
+204,dhaka--haleem,Haleem,BAD,"a diplomatic meeting, not haleem"
+205,dhaka--mughlai-paratha,Mughlai Paratha,OK,
+206,dhaka--shahi-tukra,Shahi Tukra,OK,
+207,gazipur--beef-tehari,Beef Tehari,OK,
+208,gazipur--kheer,Kheer,OK,
+209,narayanganj--shutki-bhorta,Shutki Bhorta,OK,
+210,narayanganj--beef-rezala,Beef Rezala,OK,
+211,narsingdi--chicken-roast,Chicken Roast,OK,
+212,narsingdi--muri-bhuna,Muri Bhuna,OK,
+213,manikganj--rui-kalia,Rui Kalia,OK,
+214,manikganj--jhalmuri,Jhalmuri,BAD,a street scene
+215,munshiganj--ilish-pulao,Ilish Pulao,OK,
+216,munshiganj--chingri-malaikari,Chingri Malaikari,OK,
+217,tangail--tangail-roshogolla,Tangail Roshogolla,OK,
+218,tangail--mutton-rezala,Mutton Rezala,OK,
+219,kishoreganj--boal-fish-curry,Boal Fish Curry,OK,
+220,kishoreganj--dhonia-pata-bhorta,Dhonia Pata Bhorta,OK,
+221,faridpur--koi-maach-bhuna,Koi Maach Bhuna,OK,
+222,faridpur--narkel-pitha,Narkel Pitha,BAD,man at a stall
+223,gopalganj--rui-jhol,Rui Jhol,OK,
+224,gopalganj--payesh,Payesh,OK,
+225,madaripur--pabda-maach,Pabda Maach,OK,
+226,madaripur--ilish-pulao-madaripur,Ilish Pulao (Madaripur),OK,
+227,rajbari--kheer-rajbari,Kheer (Rajbari),OK,
+228,rajbari--pabda-jhol,Pabda Jhol,OK,
+229,shariatpur--chingri-bhuna,Chingri Bhuna,OK,
+230,shariatpur--bhapa-pitha-shariatpur,Bhapa Pitha (Shariatpur),BAD,"cooked meat, not pitha"
+231,chattogram--chattogram-faluda,Chattogram Faluda,BAD,"a crowd, not faluda"
+232,chattogram--shutki-bhuna-chattogram,Shutki Bhuna (Chattogram),OK,
+233,chattogram--mezbani-mutton,Mezbani Mutton,OK,
+234,coxs-bazar--lobster-grill,Lobster Grill,OK,
+235,coxs-bazar--fried-prawn,Fried Prawn,OK,
+236,bandarban--hill-fish-curry,Hill Fish Curry,BAD,bamboo tubes on a grill
+237,bandarban--hill-banana-pitha,Hill Banana Pitha,BAD,"cooked meat, not pitha"
+238,rangamati--kaptai-prawn-curry,Kaptai Prawn Curry,OK,
+239,rangamati--hill-bamboo-rice-cake,Hill Bamboo Rice Cake,OK,
+240,khagrachhari--hill-fish-roast,Hill Fish Roast,WEAK,generic or repeated photo
+241,khagrachhari--sticky-rice-pitha,Sticky Rice Pitha,OK,
+242,feni--beef-bhuna-feni,Beef Bhuna (Feni),OK,
+243,feni--khichuri-feni,Khichuri (Feni),OK,
+244,noakhali--coconut-naru,Coconut Naru,BAD,not coconut naru
+245,noakhali--chingri-bhorta,Chingri Bhorta,OK,
+246,lakshmipur--hilsa-paturi-lakshmipur,Hilsa Paturi (Lakshmipur),OK,
+247,lakshmipur--pitha-lakshmipur,Pitha (Lakshmipur),BAD,woman cooking pitha
+248,chandpur--ilish-pulao-chandpur,Ilish Pulao (Chandpur),OK,
+249,chandpur--shorshe-ilish-chandpur,Shorshe Ilish (Chandpur),OK,
+250,cumilla--cumilla-matri-bhandar-sandesh,Cumilla Matri Bhandar Sandesh,OK,
+251,cumilla--cumilla-khichuri,Cumilla Khichuri,OK,
+252,brahmanbaria--brahmanbaria-mishti,Brahmanbaria Mishti,OK,
+253,brahmanbaria--fish-bhuna,Fish Bhuna,OK,
+254,sylhet--sylheti-hatkora-beef,Sylheti Hatkora Beef,OK,
+255,sylhet--shidol-bhorta,Shidol Bhorta,OK,
+256,moulvibazar--pineapple-juice-srimangal,Pineapple Juice (Srimangal),BAD,"pineapple workers, not juice"
+257,moulvibazar--tea-garden-lunch,Tea Garden Lunch,BAD,tea garden scenery
+258,habiganj--habiganj-beef-curry,Habiganj Beef Curry,OK,
+259,habiganj--habiganj-tea,Habiganj Tea,OK,
+260,sunamganj--boal-maach,Boal Maach,OK,
+261,sunamganj--haor-duck-curry,Haor Duck Curry,OK,
+262,rajshahi--rajshahi-kalo-jam,Rajshahi Kalo Jam,WEAK,generic or repeated photo
+263,rajshahi--mango-pulp-aam-shotto,Mango Pulp (Aam Shotto),WEAK,generic or repeated photo
+264,natore--natore-chomchom,Natore Chomchom,OK,
+265,natore--rice-pitha-natore,Rice Pitha (Natore),WEAK,generic or repeated photo
+266,chapai-nawabganj--mango-shake,Mango Shake,BAD,"mango garden, not a shake"
+267,chapai-nawabganj--fazli-mango-dessert,Fazli Mango Dessert,BAD,"mango tree, not a dessert"
+268,naogaon--naogaon-rice-kheer,Naogaon Rice Kheer,OK,
+269,naogaon--naogaon-khichuri,Naogaon Khichuri,OK,
+270,pabna--pabna-beef-bhuna,Pabna Beef Bhuna,OK,
+271,pabna--padma-fish-fry,Padma Fish Fry,OK,
+272,bogura--bogura-kheer,Bogura Kheer,OK,
+273,bogura--bogura-roshomalai,Bogura Roshomalai,OK,
+274,joypurhat--joypurhat-kheer,Joypurhat Kheer,OK,
+275,joypurhat--beef-bhuna-joypurhat,Beef Bhuna (Joypurhat),OK,
+276,sirajganj--sirajganj-mishti,Sirajganj Mishti,OK,
+277,sirajganj--jamuna-fish-curry,Jamuna Fish Curry,OK,
+278,khulna--golda-chingri-malaikari,Golda Chingri Malaikari,OK,
+279,khulna--bhetki-paturi,Bhetki Paturi,BAD,no photo
+280,bagerhat--golda-chingri-bhuna,Golda Chingri Bhuna,OK,
+281,bagerhat--bagerhat-pitha,Bagerhat Pitha,WEAK,generic or repeated photo
+282,satkhira--satkhira-crab-masala,Satkhira Crab Masala,BAD,"a raw pomfret, not crab"
+283,satkhira--prawn-pulao,Prawn Pulao,OK,
+284,jashore--jashore-bhapa-pitha,Jashore Bhapa Pitha,BAD,woman cooking pitha
+285,jashore--jashore-sweet-yoghurt,Jashore Sweet Yoghurt,WEAK,generic or repeated photo
+286,jhenaidah--jhenaidah-chitoi-pitha,Jhenaidah Chitoi Pitha,BAD,woman making dough
+287,jhenaidah--jhenaidah-fish-curry,Jhenaidah Fish Curry,OK,
+288,magura--magura-bhuna-khichuri,Magura Bhuna Khichuri,OK,
+289,magura--date-jaggery-pitha,Date Jaggery Pitha,BAD,woman cooking pitha
+290,narail--narail-chhana-sweet-roshogolla,Narail Chhana Sweet (Roshogolla),OK,
+291,narail--narail-fish-fry,Narail Fish Fry,OK,
+292,chuadanga--chuadanga-beef-bhuna,Chuadanga Beef Bhuna,OK,
+293,chuadanga--chuadanga-khichuri,Chuadanga Khichuri,OK,
+294,kushtia--kushtia-lassi,Kushtia Lassi,OK,
+295,kushtia--kushtia-beef-tehari,Kushtia Beef Tehari,OK,
+296,meherpur--meherpur-beef-curry,Meherpur Beef Curry,OK,
+297,meherpur--meherpur-payesh,Meherpur Payesh,OK,
+298,barishal--barishal-chingri-bhorta,Barishal Chingri Bhorta,OK,
+299,barishal--barishal-kheer,Barishal Kheer,OK,
+300,bhola--bhola-chingri-curry,Bhola Chingri Curry,OK,
+301,bhola--buffalo-milk-kheer,Buffalo Milk Kheer,OK,
+302,barguna--barguna-crab-curry,Barguna Crab Curry,OK,
+303,barguna--barguna-ilish,Barguna Ilish,OK,
+304,jhalakathi--guava-chutney,Guava Chutney,BAD,"river scene, not chutney"
+305,jhalakathi--jhalakathi-pitha,Jhalakathi Pitha,OK,
+306,patuakhali--patuakhali-rupchanda,Patuakhali Rupchanda,OK,
+307,patuakhali--mohipur-dried-fish,Mohipur Dried Fish,OK,
+308,pirojpur--pirojpur-amra,Pirojpur Amra,OK,
+309,pirojpur--pirojpur-ilish-bhaja,Pirojpur Ilish Bhaja,OK,
+310,rangpur--rangpur-kheer,Rangpur Kheer,OK,
+311,rangpur--rangpur-beef-bhuna,Rangpur Beef Bhuna,OK,
+312,dinajpur--katarivog-pulao,Katarivog Pulao,OK,
+313,dinajpur--dinajpur-bhapa-pitha,Dinajpur Bhapa Pitha,OK,
+314,thakurgaon--thakurgaon-beef-curry,Thakurgaon Beef Curry,OK,
+315,thakurgaon--thakurgaon-kheer,Thakurgaon Kheer,OK,
+316,panchagarh--panchagarh-khichuri,Panchagarh Khichuri,OK,
+317,panchagarh--tea-with-bakarkhani,Tea with Bakarkhani,OK,
+318,nilphamari--saidpur-beef-tehari,Saidpur Beef Tehari,OK,
+319,nilphamari--nilphamari-kheer,Nilphamari Kheer,OK,
+320,lalmonirhat--lalmonirhat-beef-bhuna,Lalmonirhat Beef Bhuna,OK,
+321,lalmonirhat--lalmonirhat-payesh,Lalmonirhat Payesh,OK,
+322,kurigram--kurigram-khichuri,Kurigram Khichuri,OK,
+323,kurigram--kurigram-beef-curry,Kurigram Beef Curry,OK,
+324,gaibandha--gaibandha-khichuri,Gaibandha Khichuri,OK,
+325,gaibandha--gaibandha-beef-bhuna,Gaibandha Beef Bhuna,OK,
+326,mymensingh--mymensingh-beef-tehari,Mymensingh Beef Tehari,OK,
+327,mymensingh--mymensingh-kheer,Mymensingh Kheer,OK,
+328,jamalpur--jamalpur-pitha-bhapa,Jamalpur Pitha (Bhapa),OK,
+329,jamalpur--jamalpur-beef-curry,Jamalpur Beef Curry,OK,
+330,netrakona--netrakona-haor-duck,Netrakona Haor Duck,OK,
+331,netrakona--netrakona-sweet-yoghurt,Netrakona Sweet Yoghurt,WEAK,generic or repeated photo
+332,sherpur--sherpur-khichuri,Sherpur Khichuri,OK,
+333,sherpur--garo-rice-beer-pitha,Garo Rice Beer Pitha,OK,
